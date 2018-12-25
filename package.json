@@ -1,8 +1,16 @@
 {
   "name": "@ali/worker-func",
   "version": "1.0.0",
-  "description": "",
+  "description": "通过传入一个Function，构造一个本地的Worker，并通过Promise返回结果",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "author": {
+    "name": "冯军",
+    "email": "guangli.fj@alibaba-inc.com"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "webpack --env=production --watch"
   },
@@ -14,11 +22,6 @@
     "Worker",
     "Promise"
   ],
-  "author": {
-    "name": "冯军",
-    "email": "guangli.fj@alibaba-inc.com"
-  },
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
@@ -28,5 +31,8 @@
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
   }
 }

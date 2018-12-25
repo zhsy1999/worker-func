@@ -1,13 +1,13 @@
-const {URL, Blob, Worker} = this || {};
+const {URL, Blob, Worker} = window || {};
 const isEnabled = URL && Blob && Worker;
 let bridge = function () {
-    let done = function (result) {
+    let callback = function (result) {
         self.postMessage(result);
         self.close();
     };
     self.onmessage = function (msg) {
         let args = msg.data.slice();
-        args.push(done);
+        args.push(callback);
         _func.apply(self, args);
     };
 };
